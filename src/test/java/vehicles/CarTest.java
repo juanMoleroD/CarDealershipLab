@@ -2,6 +2,7 @@ package vehicles;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import vehicles.parts.ChasisType;
 import vehicles.parts.Engine;
 import vehicles.parts.FuelType;
 import vehicles.parts.Tyre;
@@ -19,7 +20,6 @@ class CarTest {
         engine = new Engine("123456", "V6", FuelType.GASOLINE);
         tyre = new Tyre("Prielli", "200/100/18R");
         car = new Car("Toyota", "Corola", 20000, 0);
-
     }
 
     @Test
@@ -55,6 +55,11 @@ class CarTest {
     @Test
     void hasPrice() {
         assertEquals(20000, car.getPrice());
+    }
+
+    @Test
+    void hasChasisType() {
+        assertEquals(ChasisType.CAR, car.getChasisType());
     }
 
     @Test

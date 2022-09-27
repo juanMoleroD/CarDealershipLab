@@ -18,6 +18,7 @@ class CustomerTest {
         assertEquals(0, customer.getVehiclesOwned().size());
     }
 
+
     @Test
     void canBuyVehicle_IfEnoughMoney() {
         Car car = new Car("BMW", "M1", 10000, 0);

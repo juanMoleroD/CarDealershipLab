@@ -1,5 +1,6 @@
 package vehicles;
 
+import vehicles.parts.ChasisType;
 import vehicles.parts.Engine;
 import vehicles.parts.Tyre;
 
@@ -15,6 +16,7 @@ public abstract class Vehicle {
     private String colour;
     private int price;
     private int damage;
+    protected  ChasisType chasisType;
 
     public Vehicle(String make, String model, int price, int damage) {
         this.make = make;
@@ -75,5 +77,7 @@ public abstract class Vehicle {
         this.damage = 0;
     }
 
-
+    public ChasisType getChasisType() {
+        return chasisType;
+    }
 }
