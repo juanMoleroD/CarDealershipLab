@@ -22,4 +22,11 @@ public class Customer {
     public List<Vehicle> getVehiclesOwned() {
         return vehicles;
     }
+
+    public void buyVehicle(Vehicle vehicle) {
+        if (money >= vehicle.getPrice()) {
+            vehicles.add(vehicle);
+            money -= vehicle.getPrice();
+        }
+    }
 }

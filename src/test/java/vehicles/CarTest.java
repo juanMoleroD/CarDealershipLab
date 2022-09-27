@@ -18,7 +18,7 @@ class CarTest {
     void setUp() {
         engine = new Engine("123456", "V6", FuelType.GASOLINE);
         tyre = new Tyre("Prielli", "200/100/18R");
-        car = new Car("Toyota", "Corola", 20000);
+        car = new Car("Toyota", "Corola", 20000, 0);
 
     }
 
@@ -55,5 +55,19 @@ class CarTest {
     @Test
     void hasPrice() {
         assertEquals(20000, car.getPrice());
+    }
+
+    @Test
+    void canHaveDamage() {
+        car.addDamage(1500);
+        assertEquals(18500, car.getGrossPrice());
+        assertEquals(1500, car.getDamage());
+    }
+
+    @Test
+    void canClearDamage(){
+        car.addDamage(1500);
+        car.clearDamage();
+        assertEquals(0, car.getDamage());
     }
 }
