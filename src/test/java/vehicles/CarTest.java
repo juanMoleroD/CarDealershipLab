@@ -18,7 +18,7 @@ class CarTest {
     void setUp() {
         engine = new Engine("123456", "V6", FuelType.GASOLINE);
         tyre = new Tyre("Prielli", "200/100/18R");
-        car = new Car("Toyota", "Corola", engine, 20000);
+        car = new Car("Toyota", "Corola", 20000);
 
     }
 
@@ -30,6 +30,7 @@ class CarTest {
 
     @Test
     void hasFuelType() {
+        car.setEngine(engine);
         assertEquals(FuelType.GASOLINE, car.getEngine().getFuelType());
     }
 

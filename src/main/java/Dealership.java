@@ -12,4 +12,16 @@ public class Dealership {
         this.vehicles = new ArrayList<>();
         this.till = 10000;
     }
+
+    public List<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public int getTill() {
+        return till;
+    }
+
+    public void addVehicle(Vehicle vehicle) {
+        vehicles.add(vehicle);
+    }
 }
