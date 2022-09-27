@@ -1,11 +1,10 @@
-package cars;
+package vehicles;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
+import vehicles.parts.Engine;
+import vehicles.parts.FuelType;
+import vehicles.parts.Tyre;
 
 import static org.junit.jupiter.api.Assertions.*;
 

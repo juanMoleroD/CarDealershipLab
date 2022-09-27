@@ -1,4 +1,7 @@
-package cars;
+package vehicles;
+
+import vehicles.parts.Engine;
+import vehicles.parts.Tyre;
 
 import java.util.ArrayList;
 import java.util.List;
