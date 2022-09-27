@@ -1,6 +1,5 @@
 package cars;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,12 +8,24 @@ public class Car {
     private final String model;
     private Engine engine;
     private List<Tyre> tyres;
+    private String colour;
+    private int price;
 
-    public Car(String make, String model, Engine engine) {
+    public Car(String make, String model, Engine engine, int price) {
         this.make = make;
         this.model = model;
         this.engine = engine;
         this.tyres = new ArrayList<>();
+        this.colour = "white";
+        this.price = price;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public void paint(String colour) {
+        this.colour = colour;
     }
 
     public Car(String make, String model) {
@@ -39,5 +50,9 @@ public class Car {
     }
     public void addTyre(Tyre tyre) {
         tyres.add(tyre);
+    }
+
+    public int getPrice() {
+        return price;
     }
 }

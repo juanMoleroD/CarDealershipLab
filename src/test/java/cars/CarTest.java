@@ -1,5 +1,6 @@
 package cars;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Type;
@@ -10,8 +11,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
 
-    Engine engine = new Engine("123456", "V6", FuelType.GASOLINE);
-    Car car = new Car("Toyota", "Corola", engine);
+        Engine engine;
+        Tyre tyre;
+        Car car;
+
+    @BeforeEach
+    void setUp() {
+        engine = new Engine("123456", "V6", FuelType.GASOLINE);
+        tyre = new Tyre("Prielli", "200/100/18R");
+        car = new Car("Toyota", "Corola", engine, 20000);
+
+    }
 
     @Test
     void hasMakeAndModel() {
@@ -26,14 +36,24 @@ class CarTest {
 
     @Test
     void hasTyres() {
-        Tyre tyre = new Tyre("Prielli", "200/100/18R");
-        for(int i = 0; i < 4; i++) car.addTyre(tyre);
+
+        for (int i = 0; i < 4; i++) car.addTyre(tyre);
         assertEquals(4, car.getTyres().size());
     }
 
     @Test
-    void hasColour() {
+    void hasColourStartsWhite() {
+        assertEquals("white", car.getColour());
+    }
 
-//        car.getColour()
+    @Test
+    void canChangeColour() {
+        car.paint("red");
+        assertEquals("red", car.getColour());
+    }
+
+    @Test
+    void hasPrice() {
+        assertEquals(20000, car.getPrice());
     }
 }
